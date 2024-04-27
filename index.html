@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="main">
+
+<div class="mouse"></div>
+    <ul>
+      <li>frame
+        <img src="assets/arch.jpg" class="pic" alt="architecture">
+      </li>
+      <li>vertical
+        <img src="assets/pieds.jpg" class="pic" alt="pieds">
+      </li>
+      <li>board
+        <img src="assets/femme.jpg" class="pic" alt="femme">
+      </li>
+      <li>popular
+        <img src="assets/couple.jpg" class="pic" alt="couple">
+      </li>
+      <li>trends
+        <img src="assets/arch2.jpg" class="pic" alt="architecture">
+      </li>
+      <li>brand
+        <img src="assets/paysage.jpg" class="pic" alt="paysage">
+      </li>
+      <li>almost
+        <img src="assets/afro.jpg"  class="pic"  alt="femme africaine">
+      </li>
+    </ul>
+
+  </div>
+
+
+  <script>
+    const souris=document.querySelector('.mouse');
+    const mots=document.querySelectorAll('li');
+    console.log(souris);
+    console.log(mots);
+
+    window.addEventListener("mousemove",(e)=>{
+     console.log(e);
+     souris.style.left=e.pageX - souris.offsetWidth/2 + "px";
+     souris.style.top=e.pageY - souris.offsetHeight/2 + "px";
+    })
+
+    mots.forEach(element => {
+       element.addEventListener("mouseenter",()=>{
+        element.querySelector('.pic').classList.toggle('appear')
+      
+       })
+
+       element.addEventListener("mouseout",()=>{
+        element.querySelector('.pic').classList.toggle('appear')
+      })
+});
+
+
+  </script>
+</body>
+</html>
